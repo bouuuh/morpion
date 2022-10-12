@@ -1,0 +1,19 @@
+LE JEU DU MORPION:
+
+Créer une page HTML permettant de jouer au jeu du morpion. Le js sera utilisé pour gérer le fonctionnement du jeu.
+
+Au niveau de cette page on doit trouver comme information : 
+	- le nombre de parties prévues (afin de déterminer le gagnant)
+	- le numéro de la partie en cours
+	- le numéro du joueur qui joue
+	- le nombre de coup restant
+	- le numéro du joueur gagnant à la fin de la partie
+
+On doit avoir la possibilité de choisir le mode de fonctionnement de le nombre de parties :
+	- mode joueur 1 contre joueur 2
+	- mode joueur 1 contr ordinateur
+	- modifier le nombre de parties prévues (par défaut = 1)
+	
+Prévoir un "bouton" pour relancer une nouvelle partie.
+
+On doit mémoriser les parties gagnantes pour chaque joueur (localStorage). Lorsque l'on a atteint le nombre de parties, il faut indiquer qui est le vainqueur.
