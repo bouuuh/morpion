@@ -19,6 +19,7 @@ h1{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     margin-top: 5vh;
+    
 }
 .box{
     border: 8px solid;
@@ -29,6 +30,7 @@ h1{
     height: 17vh;
    font-size: 60px;
    color: #43436b;
+   background-color: #e8eaff;
 }
 .box3{
     border-right-style: none;
@@ -51,6 +53,7 @@ h1{
     justify-content: flex-end;
     margin-right: 15vh;
     margin-top: 1vh;
+    margin-bottom: 1vh;
 }
 .nbgameleft{
     border: 2px solid #C35D94;
@@ -84,4 +87,63 @@ h1{
 .roundleft{
     margin-top: -2vh;
     font-size: 16px;
+}
+.whowon{
+    width: 80vh;
+    height: 40vh;
+    background-color: #43436b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #e8eaff;
+    margin-top: 10vh;
+    border-radius: 40px;
+    font-size: 40px;
+}
+
+.againstWhom{
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.againstWhom label{
+    margin-top: 2vh;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    color: #43436b;
+}
+input{
+    margin-top: 3vh;
+    accent-color: #C35D94;
+}
+select{
+    margin-top: 3vh;
+    width: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+}
+button{
+    width: 15vh;
+    height: 5vh;
+    font-size: 20px;
+    border: 1px solid #43436b;
+    background-color: #C35D94;
+    color: #e8eaff;
+    border-radius: 25px;
+}
+img{
+    height: 50px;
+    width: 50px;
+    margin-left: 1vh;
+    margin-top: 1vh;
 }

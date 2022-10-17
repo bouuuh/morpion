@@ -6,14 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Viens jouer au morpion</title>
     <link rel="stylesheet" href="app.css">
-    <script src="app.js" defer></script>
+    <script src="thethird.js" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <div class="interface">
-
+        <h1>LE JEU DU MORPION</h1>
+        <form action="" class="interface">
+            <div class="againstWhom">
+                <legend for="who">Vous voulez jouer contre :</legend><br>
+            <div class="answers">
+            <input id="thecomputer" type="radio" name="player" value="thecomputer" checked> 
+            <label for="thecomputer">un autre joueur</label> <br>
+            <input id="theplayer" type="radio" name="player" value="theplayer"> 
+            <label for="theplayer">ordinateur</label> 
+            </div>
         </div>
+            
+            <div class="againstWhom">
+                <legend for="numberparty">Combien de parties voulez-vous faire ?</legend> <br>
+            <select name="howManyGames" id="numberparty">
+                <option value="nbGame">1</option>
+                <option value="nbGame">2</option>
+                <option value="nbGame">3</option>
+                <option value="nbGame">4</option>
+                <option value="nbGame">5</option>
+                <option value="nbGame">6</option>
+            </select>
+            </div>
+            
+            <button id="submitTheForm" type="submit">Valider</button>
+        </form>
     </div>
 </body>
 </html>
