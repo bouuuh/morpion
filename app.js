@@ -14,9 +14,6 @@ let victoire = false;
 let victoire1 = false;
 let victoire2 = false;
 
-let winOfPlayer1 = 0;
-let winOfPlayer2 = 0;
-
 
 let local = JSON.parse(localStorage.getItem("getParameters"));
 let leftOf = document.querySelector(".leftof");
@@ -24,6 +21,43 @@ leftOf.innerHTML = localStorage.numberGamesLeft + "/" + local.numberGames;
 
 whoWon.style.display = "none";
 
+
+function oneWin() {
+    setTimeout(function() {whoWon.style.display = "flex";}, 500 );
+            setTimeout(function() {whoWon.innerHTML="Joueur 1 gagne !"}, 500 );
+            setTimeout(function() {whichPlayer.style.display = "none"}, 500 );
+            setTimeout(function() {whichPlayer.style.display = "none"}, 500 );
+            setTimeout(function() {countdown.style.display = "none"}, 500 ); 
+            localStorage.setItem("numberGamesLeft", JSON.parse(localStorage.numberGamesLeft) - 1);
+            localStorage.setItem("winPlayer1", (JSON.parse(localStorage.winPlayer1) + 1))
+            if (JSON.parse(localStorage.numberGamesLeft) === 0 ) {
+                for (let c = 0; c < boxes.length; c++) {
+                    boxes[c].disabled = true;
+                }
+                setTimeout(function () {window.location.replace("result.html"); }, 3000);
+                
+            }else{
+              setTimeout(function () { location.reload()}, 3000);  
+            }
+}
+function twoWin() {
+    setTimeout(function() {whoWon.style.display = "flex";}, 500 );
+            setTimeout(function() {whoWon.innerHTML="Joueur 2 gagne !"}, 500 );
+            setTimeout(function() {whichPlayer.style.display = "none"}, 500 );
+            setTimeout(function() {whichPlayer.style.display = "none"}, 500 );
+            setTimeout(function() {countdown.style.display = "none"}, 500 ); 
+            localStorage.setItem("numberGamesLeft", JSON.parse(localStorage.numberGamesLeft) - 1);
+            localStorage.setItem("winPlayer2", (JSON.parse(localStorage.winPlayer2) + 1))
+            if (JSON.parse(localStorage.numberGamesLeft) === 0 ) {
+                for (let c = 0; c < boxes.length; c++) {
+                    boxes[c].disabled = true;
+                }
+                setTimeout(function () {window.location.replace("result.html"); }, 3000);
+                
+            }else{
+              setTimeout(function () { location.reload()}, 3000);  
+            }
+}
 
             
     for (let i = 0; i < boxes.length; i++) {
@@ -58,34 +92,10 @@ if((result[0] === ("1") && result[1] === ("1") && result[2] === ("1"))||(result[
     boxes[1].style.background = "#C35D94";
     boxes[2].style.background = "#C35D94";
         if(result[0] === "1"){
-            setTimeout(function() {whoWon.style.display = "flex";}, 500 );
-            setTimeout(function() {whoWon.innerHTML="Joueur 1 gagne !"}, 500 );
-            setTimeout(function() {whichPlayer.style.display = "none"}, 500 );
-            setTimeout(function() {whichPlayer.style.display = "none"}, 500 );
-            setTimeout(function() {countdown.style.display = "none"}, 500 ); 
-            localStorage.setItem("numberGamesLeft", JSON.parse(localStorage.numberGamesLeft) - 1);
-            localStorage.setItem("winPlayer1", (JSON.parse(localStorage.winPlayer1) + 1))
-            if (JSON.parse(localStorage.numberGamesLeft) === 0 ) {
-                setTimeout(function () {window.location.replace("result.html"); }, 3000);
-                
-            }else{
-              setTimeout(function () { location.reload()}, 3000);  
-            }
+            oneWin();
         }
         else{
-            setTimeout(function() {whoWon.style.display = "flex";}, 500 );
-            setTimeout(function() {whoWon.innerHTML="Joueur 2 gagne !"}, 500 );
-            setTimeout(function() {whichPlayer.style.display = "none"}, 500 );
-            setTimeout(function() {whichPlayer.style.display = "none"}, 500 );
-            setTimeout(function() {countdown.style.display = "none"}, 500 ); 
-            localStorage.setItem("numberGamesLeft", JSON.parse(localStorage.numberGamesLeft) - 1);
-            localStorage.setItem("winPlayer2", (JSON.parse(localStorage.winPlayer2) + 1))
-            if (JSON.parse(localStorage.numberGamesLeft) === 0 ) {
-                setTimeout(function () {window.location.replace("result.html"); }, 3000);
-                
-            }else{
-              setTimeout(function () { location.reload()}, 3000);  
-            }
+            twoWin()
         }
 }
 
@@ -95,34 +105,10 @@ else if((result[3] === ("1") && result[4] === ("1") && result[5] === ("1"))||(re
     boxes[4].style.background = "#C35D94";
     boxes[5].style.background = "#C35D94";
     if(result[3] === "1"){
-        setTimeout(function() {whoWon.style.display = "flex";}, 500 );
-        setTimeout(function() {whoWon.innerHTML="Joueur 1 gagne !"}, 500 );
-        setTimeout(function() {whichPlayer.style.display = "none"}, 500 );
-        setTimeout(function() {whichPlayer.style.display = "none"}, 500 );
-        setTimeout(function() {countdown.style.display = "none"}, 500 );  
-        localStorage.setItem("numberGamesLeft", JSON.parse(localStorage.numberGamesLeft) - 1);
-            localStorage.setItem("winPlayer1", (JSON.parse(localStorage.winPlayer1) + 1))
-            if (JSON.parse(localStorage.numberGamesLeft) === 0 ) {
-                setTimeout(function () {window.location.replace("result.html"); }, 3000);
-                
-            }else{
-              setTimeout(function () { location.reload()}, 3000);  
-            }
+        oneWin();
     }
     else{
-        setTimeout(function() {whoWon.style.display = "flex";}, 500 );
-        setTimeout(function() {whoWon.innerHTML="Joueur 2 gagne !"}, 500 );
-        setTimeout(function() {whichPlayer.style.display = "none"}, 500 );
-        setTimeout(function() {whichPlayer.style.display = "none"}, 500 );
-        setTimeout(function() {countdown.style.display = "none"}, 500 );
-        localStorage.setItem("numberGamesLeft", JSON.parse(localStorage.numberGamesLeft) - 1);
-            localStorage.setItem("winPlayer2", (JSON.parse(localStorage.winPlayer2) + 1))
-            if (JSON.parse(localStorage.numberGamesLeft) === 0 ) {
-                setTimeout(function () {window.location.replace("result.html"); }, 3000);
-                
-            }else{
-              setTimeout(function () { location.reload()}, 3000);  
-            } 
+        twoWin()
     }
 }
 else if((result[6] === ("1") && result[7] === ("1") && result[8] === ("1"))||(result[6] === ("2") && result[7] === ("2") && result[8] === ("2"))){
@@ -131,34 +117,10 @@ else if((result[6] === ("1") && result[7] === ("1") && result[8] === ("1"))||(re
     boxes[7].style.background = "#C35D94";
     boxes[8].style.background = "#C35D94";
     if(result[6] === "1"){
-        setTimeout(function() {whoWon.style.display = "flex";}, 500 );
-        setTimeout(function() {whoWon.innerHTML="Joueur 1 gagne !"}, 500 );
-        setTimeout(function() {whichPlayer.style.display = "none"}, 500 );
-        setTimeout(function() {whichPlayer.style.display = "none"}, 500 );
-        setTimeout(function() {countdown.style.display = "none"}, 500 );
-        localStorage.setItem("numberGamesLeft", JSON.parse(localStorage.numberGamesLeft) - 1);
-            localStorage.setItem("winPlayer1", (JSON.parse(localStorage.winPlayer1) + 1))
-            if (JSON.parse(localStorage.numberGamesLeft) === 0 ) {
-                setTimeout(function () {window.location.replace("result.html"); }, 3000);
-                
-            }else{
-              setTimeout(function () { location.reload()}, 3000);  
-            }  
+        oneWin();
     }
     else{
-        setTimeout(function() {whoWon.style.display = "flex";}, 500 );
-        setTimeout(function() {whoWon.innerHTML="Joueur 2 gagne !"}, 500 );
-        setTimeout(function() {whichPlayer.style.display = "none"}, 500 );
-        setTimeout(function() {whichPlayer.style.display = "none"}, 500 );
-        setTimeout(function() {countdown.style.display = "none"}, 500 );
-        localStorage.setItem("numberGamesLeft", JSON.parse(localStorage.numberGamesLeft) - 1);
-            localStorage.setItem("winPlayer2", (JSON.parse(localStorage.winPlayer2) + 1))
-            if (JSON.parse(localStorage.numberGamesLeft) === 0 ) {
-                setTimeout(function () {window.location.replace("result.html"); }, 3000);
-                
-            }else{
-              setTimeout(function () { location.reload()}, 3000);  
-            } 
+        twoWin()
     }
 
 }
@@ -168,34 +130,10 @@ else if((result[0] === ("1") && result[3] === ("1") && result[6] === ("1"))||(re
     boxes[3].style.background = "#C35D94";
     boxes[6].style.background = "#C35D94";
     if(result[0] === "1"){
-        setTimeout(function() {whoWon.style.display = "flex";}, 500 );
-        setTimeout(function() {whoWon.innerHTML="Joueur 1 gagne !"}, 500 );
-        setTimeout(function() {whichPlayer.style.display = "none"}, 500 );
-        setTimeout(function() {whichPlayer.style.display = "none"}, 500 );
-        setTimeout(function() {countdown.style.display = "none"}, 500 );
-        localStorage.setItem("numberGamesLeft", JSON.parse(localStorage.numberGamesLeft) - 1);
-            localStorage.setItem("winPlayer1", (JSON.parse(localStorage.winPlayer1) + 1))
-            if (JSON.parse(localStorage.numberGamesLeft) === 0 ) {
-                setTimeout(function () {window.location.replace("result.html"); }, 3000);
-                
-            }else{
-              setTimeout(function () { location.reload()}, 3000);  
-            }  
+        oneWin();
     }
     else{
-        setTimeout(function() {whoWon.style.display = "flex";}, 500 );
-        setTimeout(function() {whoWon.innerHTML="Joueur 2 gagne !"}, 500 );
-        setTimeout(function() {whichPlayer.style.display = "none"}, 500 );
-        setTimeout(function() {whichPlayer.style.display = "none"}, 500 );
-        setTimeout(function() {countdown.style.display = "none"}, 500 );
-        localStorage.setItem("numberGamesLeft", JSON.parse(localStorage.numberGamesLeft) - 1);
-            localStorage.setItem("winPlayer2", (JSON.parse(localStorage.winPlayer2) + 1))
-            if (JSON.parse(localStorage.numberGamesLeft) === 0 ) {
-                setTimeout(function () {window.location.replace("result.html"); }, 3000);
-                
-            }else{
-              setTimeout(function () { location.reload()}, 3000);  
-            } 
+        twoWin()
     }
 }
 else if((result[1] === ("1") && result[4] === ("1") && result[7] === ("1"))||(result[1] === ( "2") && result[4] === ("2") && result[7] === ("2"))){
@@ -204,34 +142,10 @@ else if((result[1] === ("1") && result[4] === ("1") && result[7] === ("1"))||(re
     boxes[4].style.background = "#C35D94";
     boxes[7].style.background = "#C35D94";
     if(result[1] === "1"){
-        setTimeout(function() {whoWon.style.display = "flex";}, 500 );
-        setTimeout(function() {whoWon.innerHTML="Joueur 1 gagne !"}, 500 );
-        setTimeout(function() {whichPlayer.style.display = "none"}, 500 );
-        setTimeout(function() {whichPlayer.style.display = "none"}, 500 );
-        setTimeout(function() {countdown.style.display = "none"}, 500 );
-        localStorage.setItem("numberGamesLeft", JSON.parse(localStorage.numberGamesLeft) - 1);
-            localStorage.setItem("winPlayer1", (JSON.parse(localStorage.winPlayer1) + 1))
-            if (JSON.parse(localStorage.numberGamesLeft) === 0 ) {
-                setTimeout(function () {window.location.replace("result.html"); }, 3000);
-                
-            }else{
-              setTimeout(function () { location.reload()}, 3000);  
-            }  
+        oneWin();
     }
     else{
-        setTimeout(function() {whoWon.style.display = "flex";}, 500 );
-        setTimeout(function() {whoWon.innerHTML="Joueur 2 gagne !"}, 500 );
-        setTimeout(function() {whichPlayer.style.display = "none"}, 500 );
-        setTimeout(function() {whichPlayer.style.display = "none"}, 500 );
-        setTimeout(function() {countdown.style.display = "none"}, 500 );
-        localStorage.setItem("numberGamesLeft", JSON.parse(localStorage.numberGamesLeft) - 1);
-            localStorage.setItem("winPlayer2", (JSON.parse(localStorage.winPlayer2) + 1))
-            if (JSON.parse(localStorage.numberGamesLeft) === 0 ) {
-                setTimeout(function () {window.location.replace("result.html"); }, 3000);
-                
-            }else{
-              setTimeout(function () { location.reload()}, 3000);  
-            } 
+        twoWin()
     }
 }
 else if((result[2] === ("1") && result[5] === ("1") && result[8] === ("1"))||(result[2] === ("2") && result[5] === ("2") && result[8] === ("2")) ){
@@ -240,34 +154,10 @@ else if((result[2] === ("1") && result[5] === ("1") && result[8] === ("1"))||(re
     boxes[5].style.background = "#C35D94";
     boxes[8].style.background = "#C35D94";
     if(result[2] === "1"){
-        setTimeout(function() {whoWon.style.display = "flex";}, 500 );
-        setTimeout(function() {whoWon.innerHTML="Joueur 1 gagne !"}, 500 );
-        setTimeout(function() {whichPlayer.style.display = "none"}, 500 );
-        setTimeout(function() {whichPlayer.style.display = "none"}, 500 );
-        setTimeout(function() {countdown.style.display = "none"}, 500 );
-        localStorage.setItem("numberGamesLeft", JSON.parse(localStorage.numberGamesLeft) - 1);
-            localStorage.setItem("winPlayer1", (JSON.parse(localStorage.winPlayer1) + 1))
-            if (JSON.parse(localStorage.numberGamesLeft) === 0 ) {
-                setTimeout(function () {window.location.replace("result.html"); }, 3000);
-                
-            }else{
-              setTimeout(function () { location.reload()}, 3000);  
-            }  
+        oneWin();
     }
     else{
-        setTimeout(function() {whoWon.style.display = "flex";}, 500 );
-        setTimeout(function() {whoWon.innerHTML="Joueur 2 gagne !"}, 500 );
-        setTimeout(function() {whichPlayer.style.display = "none"}, 500 );
-        setTimeout(function() {whichPlayer.style.display = "none"}, 500 );
-        setTimeout(function() {countdown.style.display = "none"}, 500 );
-        localStorage.setItem("numberGamesLeft", JSON.parse(localStorage.numberGamesLeft) - 1);
-            localStorage.setItem("winPlayer2", (JSON.parse(localStorage.winPlayer2) + 1))
-            if (JSON.parse(localStorage.numberGamesLeft) === 0 ) {
-                setTimeout(function () {window.location.replace("result.html"); }, 3000);
-                
-            }else{
-              setTimeout(function () { location.reload()}, 3000);  
-            } 
+        twoWin()
     }
 }
 else if((result[0] === ("1") && result[4] === ("1")&& result[8] === ("1"))||(result[0] === ("2") && result[4] === ( "2")&& result[8] === ( "2")) ){
@@ -276,34 +166,10 @@ else if((result[0] === ("1") && result[4] === ("1")&& result[8] === ("1"))||(res
     boxes[4].style.background = "#C35D94";
     boxes[8].style.background = "#C35D94";
     if(result[0] === "1"){
-        setTimeout(function() {whoWon.style.display = "flex";}, 500 );
-        setTimeout(function() {whoWon.innerHTML="Joueur 1 gagne !"}, 500 );
-        setTimeout(function() {whichPlayer.style.display = "none"}, 500 );
-        setTimeout(function() {whichPlayer.style.display = "none"}, 500 );
-        setTimeout(function() {countdown.style.display = "none"}, 500 );
-        localStorage.setItem("numberGamesLeft", JSON.parse(localStorage.numberGamesLeft) - 1);
-            localStorage.setItem("winPlayer1", (JSON.parse(localStorage.winPlayer1) + 1))
-            if (JSON.parse(localStorage.numberGamesLeft) === 0 ) {
-                setTimeout(function () {window.location.replace("result.html"); }, 3000);
-                
-            }else{
-              setTimeout(function () { location.reload()}, 3000);  
-            }  
+        oneWin();
     }
     else{
-        setTimeout(function() {whoWon.style.display = "flex";}, 500 );
-        setTimeout(function() {whoWon.innerHTML="Joueur 2 gagne !"}, 500 );
-        setTimeout(function() {whichPlayer.style.display = "none"}, 500 );
-        setTimeout(function() {whichPlayer.style.display = "none"}, 500 );
-        setTimeout(function() {countdown.style.display = "none"}, 500 );
-        localStorage.setItem("numberGamesLeft", JSON.parse(localStorage.numberGamesLeft) - 1);
-            localStorage.setItem("winPlayer2", (JSON.parse(localStorage.winPlayer2) + 1))
-            if (JSON.parse(localStorage.numberGamesLeft) === 0 ) {
-                setTimeout(function () {window.location.replace("result.html"); }, 3000);
-                
-            }else{
-              setTimeout(function () { location.reload()}, 3000);  
-            } 
+        twoWin()
     }
 }
 else if((result[2] === ("1") && result[4] === ("1") && result[6] === ("1")) || (result[2] === ("2") && result[4] === ("2") && result[6] === ("2"))){
@@ -312,34 +178,10 @@ else if((result[2] === ("1") && result[4] === ("1") && result[6] === ("1")) || (
     boxes[4].style.background = "#C35D94";
     boxes[6].style.background = "#C35D94";
     if(result[2] === "1"){
-        setTimeout(function() {whoWon.style.display = "flex";}, 500 );
-        setTimeout(function() {whoWon.innerHTML="Joueur 1 gagne !"}, 500 );
-        setTimeout(function() {whichPlayer.style.display = "none"}, 500 );
-        setTimeout(function() {whichPlayer.style.display = "none"}, 500 );
-        setTimeout(function() {countdown.style.display = "none"}, 500 );
-        localStorage.setItem("numberGamesLeft", JSON.parse(localStorage.numberGamesLeft) - 1);
-            localStorage.setItem("winPlayer1", (JSON.parse(localStorage.winPlayer1) + 1))
-            if (JSON.parse(localStorage.numberGamesLeft) === 0 ) {
-                setTimeout(function () {window.location.replace("result.html"); }, 3000);
-                
-            }else{
-              setTimeout(function () { location.reload()}, 3000);  
-            }  
+        oneWin();
     }
     else{
-        setTimeout(function() {whoWon.style.display = "flex";}, 500 );
-        setTimeout(function() {whoWon.innerHTML="Joueur 2 gagne !"}, 500 );
-        setTimeout(function() {whichPlayer.style.display = "none"}, 500 );
-        setTimeout(function() {whichPlayer.style.display = "none"}, 500 );
-        setTimeout(function() {countdown.style.display = "none"}, 500 );
-        localStorage.setItem("numberGamesLeft", JSON.parse(localStorage.numberGamesLeft) - 1);
-            localStorage.setItem("winPlayer2", (JSON.parse(localStorage.winPlayer2) + 1))
-            if (JSON.parse(localStorage.numberGamesLeft) === 0 ) {
-                setTimeout(function () {window.location.replace("result.html"); }, 3000);
-                
-            }else{
-              setTimeout(function () { location.reload()}, 3000);  
-            } 
+        twoWin()
     }
     
 }
@@ -351,6 +193,9 @@ else if (result[0] != "0" &&result[1] != "0" &&result[2] != "0" &&result[3] != "
               setTimeout(function() {countdown.style.display = "none"}, 500 );
               localStorage.setItem("numberGamesLeft", JSON.parse(localStorage.numberGamesLeft) - 1);
               if (JSON.parse(localStorage.numberGamesLeft) === 0 ) {
+                for (let c = 0; c < boxes.length; c++) {
+                    boxes[c].disabled = true;
+                }
                 setTimeout(function () {window.location.replace("result.html"); }, 3000);
                 
             }else{
@@ -359,7 +204,6 @@ else if (result[0] != "0" &&result[1] != "0" &&result[2] != "0" &&result[3] != "
          } 
 })
 }
-
 
 //revenir au menu principal
 let back = document.querySelector(".back");
