@@ -12,11 +12,11 @@ back.addEventListener("click", function() {
 
 if ((JSON.parse(localStorage.winPlayer1) > JSON.parse(localStorage.winPlayer2)) ) {  
     whoWon.innerHTML = "Bravo Joueur 1 ! " 
-    announce.innerHTML = localStorage.winPlayer1 + " victoire sur " + local.numberGames;
+    //announce.innerHTML = localStorage.winPlayer1 + " victoire sur " + local.numberGames;
 }
 else if ((JSON.parse(localStorage.winPlayer1) < JSON.parse(localStorage.winPlayer2)) ) {   
     whoWon.innerHTML = "Joueur 2 !"
-    announce.innerHTML = localStorage.winPlayer2 + " victoire sur " + local.numberGames;
+   // announce.innerHTML = localStorage.winPlayer2 + " victoire sur " + local.numberGames;
 }    
 else if ((JSON.parse(localStorage.winPlayer1) === JSON.parse(localStorage.winPlayer2)) ) {
     whoWon.innerHTML = "Personne !"

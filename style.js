@@ -61,6 +61,7 @@ for (let i = 0; i < boxes.length; i++) {
 //Joueur gagne quand
 if((result[0] === ("1") && result[1] === ("1") && result[2] === ("1"))||(result[0] === ( "2") && result[1] === ( "2") && result[2] === ("2")) ){
     victoire = true;
+
     boxes[0].style.background = "#C35D94";
     boxes[1].style.background = "#C35D94";
     boxes[2].style.background = "#C35D94";
@@ -78,7 +79,6 @@ if((result[0] === ("1") && result[1] === ("1") && result[2] === ("1"))||(result[
             }else{
               setTimeout(function () { location.reload()}, 3000);  
             }
-            
         }
         else{
             setTimeout(function() {whoWon.style.display = "flex";}, 500 );
@@ -130,7 +130,7 @@ else if((result[3] === ("1") && result[4] === ("1") && result[5] === ("1"))||(re
                 
             }else{
               setTimeout(function () { location.reload()}, 3000);  
-            }
+            } 
     }
 }
 else if((result[6] === ("1") && result[7] === ("1") && result[8] === ("1"))||(result[6] === ("2") && result[7] === ("2") && result[8] === ("2"))){
@@ -368,7 +368,6 @@ else if (result[0] != "0" &&result[1] != "0" &&result[2] != "0" &&result[3] != "
 })
 }
 
-//conditions de victoire
 
 //revenir au menu principal
 let back = document.querySelector(".back");
@@ -377,6 +376,7 @@ back.addEventListener("click", function() {
     localStorage.clear();
     window.location.replace("index.html");
 })
+
 
 
 
