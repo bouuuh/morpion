@@ -32,10 +32,12 @@ function oneWin() {
             setTimeout(function() {countdown.style.display = "none"}, 500 ); 
             localStorage.setItem("numberGamesLeft", JSON.parse(localStorage.numberGamesLeft) - 1);
             localStorage.setItem("winPlayer1", (JSON.parse(localStorage.winPlayer1) + 1))
-            if (JSON.parse(localStorage.numberGamesLeft) === 0 ) {
+            if (victoire === true) {
                 for (let c = 0; c < boxes.length; c++) {
                     boxes[c].disabled = true;
                 }
+            }
+            if (JSON.parse(localStorage.numberGamesLeft) === 0 ) {
                 setTimeout(function () {window.location.replace("result.html"); }, 3000);
                 
             }else{
