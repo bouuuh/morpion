@@ -209,3 +209,47 @@ img{
 .winner{
     background-color: #e8eaff;
 }
+
+@media screen and (max-width:931px){
+.interface2{
+    width: 700px;
+}
+}
+@media screen and (max-width:727px) {
+    h1{
+        font-size: 35px;
+    }
+    .interface2{
+        width: 500px;
+    }
+    .againstWhom{
+        font-size: 20px;
+    }
+}
+@media screen and (max-width:521px){
+    .interface2{
+        width: 350px;
+        height: 520px;
+    }
+    h1{
+        font-size: 25px;
+    }
+    .againstWhom{
+        font-size: 16px;
+    }
+    #submitTheForm{
+        width: 100px;
+        font-size: 18px;
+    }
+}
+@media screen and (max-width:365px){
+    .interface2{
+        width: 280px;
+    }
+    h1{
+        font-size: 20px;
+    }
+    .againstWhom{
+        font-size: 14px;
+    }
+}
