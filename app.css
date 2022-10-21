@@ -1,8 +1,40 @@
 *{
     padding: 0;
     margin: 0;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Kanit', sans-serif;
+   
+}
+body{
+     background-image: url(Firefly-6.3s-1084px.png);
+     text-transform: uppercase;
+}
+.interface2{
     background-color: #e8eaff;
+    width: 900px;
+    height: 620px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20px;
+    border: 2px solid #C35D94;
+    margin-top: 5vh;
+    box-shadow: 2px 2px 12px 1px #43436b;
+    
+}
+.interface3{
+    background-color: #e8eaff;
+    width: 1100px;
+    height: 870px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20px;
+    border: 2px solid #C35D94;
+    
+    box-shadow: 2px 2px 12px 1px #43436b;
+    
 }
 .container{
     display: flex;
@@ -11,10 +43,14 @@
     flex-direction: column;
 }
 h1{
-    margin-top: 5vh;
-    font-size: 40px;
+    font-family: 'Kanit';
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    font-size: 50px;
+    font-weight:900;
     color: #43436b;
 }
+
 .game{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -28,9 +64,11 @@ h1{
     border-left-style: none;
     width: 17vh;
     height: 17vh;
-   font-size: 60px;
+   font-size: 80px;
    color: #43436b;
    background-color: #e8eaff;
+   font-family: 'Fuzzy Bubbles', cursive;
+   font-weight: 400;
 }
 .box3{
     border-right-style: none;
@@ -51,20 +89,21 @@ h1{
 .gameleft{
     display: flex;
     justify-content: flex-end;
-    margin-right: 15vh;
-    margin-top: 1vh;
+    margin-right: 10vh;
+    margin-top: 3vh;
     margin-bottom: 1vh;
+    background-color: #e8eaff;
 }
 .nbgameleft{
-    border: 2px solid #C35D94;
+    border: 3px solid #C35D94;
     width: 25vh;
     height: 7vh;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 20px;
+    font-weight: 900;
     color: #43436b;
-    font-weight: 600;
 }
 .tryagain{
     margin-top: 5vh;
@@ -89,9 +128,10 @@ h1{
     font-size: 30px;
     color: #C35D94;
     font-weight: 700;
+    background-color: #e8eaff;
 }
 .roundleft{
-    margin-top: -2vh;
+    margin-top: 2vh;
     font-size: 16px;
 }
 .whowon{
@@ -108,7 +148,7 @@ h1{
 }
 
 .againstWhom{
-    margin-top: 5vh;
+    margin-top: 3vh;
     margin-bottom: 5vh;
     display: flex;
     flex-direction: column;
@@ -137,6 +177,7 @@ select{
     justify-content: center;
     align-items: center;
     font-size: 15px;
+    text-align: center;
 }
 button{
     width: 15vh;
@@ -148,8 +189,23 @@ button{
     border-radius: 25px;
 }
 img{
-    height: 50px;
-    width: 50px;
+    height: 60px;
+    width: 60px;
     margin-left: 1vh;
     margin-top: 1vh;
+}
+.interface{
+    font-size: 21px;
+}
+#submitTheForm{
+    box-shadow: 1px 1px 8px 1px #43436b;
+    border: none;
+}
+#submitTheForm:hover{
+    color: #e8eaff;
+    background-color: #43436b;
+    box-shadow: 1px 1px 8px 1px #C35D94;
+}
+.winner{
+    background-color: #e8eaff;
 }
