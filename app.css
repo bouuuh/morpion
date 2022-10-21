@@ -225,7 +225,7 @@ img{
 }
 @media screen and (max-width:727px) {
     h1{
-        font-size: 35px;
+        font-size: 30px;
     }
     .interface2{
         width: 500px;
@@ -235,6 +235,10 @@ img{
     }
     .interface3{
         width: 500px;
+    }
+    .whowon{
+        width: 450px;
+        font-size: 35px;
     }
 }
 @media screen and (max-width:521px){
@@ -267,9 +271,15 @@ img{
     .box{
         width: 10vh;
         height: 10vh;
+        font-size: 45px;
     }
     .whichplayer{
         font-size: 20px;
+    }
+    .whowon{
+        width: 300px;
+        font-size: 25px;
+        height: 250px;
     }
 }
 @media screen and (max-width:365px){
@@ -284,5 +294,12 @@ img{
     }
     .interface3{
         width: 280px;
+    }
+    .whowon{
+        width: 280px;
+        font-size: 20px;
+    }
+    .announce{
+        font-size: 25px;
     }
 }
