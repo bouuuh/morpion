@@ -92,9 +92,10 @@ h1{
     margin-right: 10vh;
     margin-top: 3vh;
     margin-bottom: 1vh;
-    background-color: #e8eaff;
+    
 }
 .nbgameleft{
+    background-color: #e8eaff;
     border: 3px solid #C35D94;
     width: 25vh;
     height: 7vh;
@@ -209,9 +210,16 @@ img{
 .winner{
     background-color: #e8eaff;
 }
-
+@media screen and (max-width:1113px){
+.interface3{
+    width: 900px;
+}
+}
 @media screen and (max-width:931px){
 .interface2{
+    width: 700px;
+}
+.interface3{
     width: 700px;
 }
 }
@@ -224,6 +232,9 @@ img{
     }
     .againstWhom{
         font-size: 20px;
+    }
+    .interface3{
+        width: 500px;
     }
 }
 @media screen and (max-width:521px){
@@ -241,6 +252,25 @@ img{
         width: 100px;
         font-size: 18px;
     }
+    .interface3{
+        width: 350px;
+        height: 650px;
+    }
+    .back{
+        width: 50px;
+    }
+    .nbgameleft{
+        width: 20vh;
+        font-size: 16px;
+        border-width: 2px;
+    }
+    .box{
+        width: 10vh;
+        height: 10vh;
+    }
+    .whichplayer{
+        font-size: 20px;
+    }
 }
 @media screen and (max-width:365px){
     .interface2{
@@ -251,5 +281,8 @@ img{
     }
     .againstWhom{
         font-size: 14px;
+    }
+    .interface3{
+        width: 280px;
     }
 }
